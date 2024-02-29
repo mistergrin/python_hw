@@ -15,7 +15,7 @@ def generate_password():
         for i in range(password_length):
             password_choice = random.choice(password_symbols)
             list_password.append(password_choice)
-        if any(symbol.isdigit() for symbol in list_password):
+        if any(symbol.isdigit() for symbol in list_password) and any(symbol in string.ascii_letters for symbol in list_password) and any(symbol in string.punctuation for symbol in list_password):
             break
         else:
             list_password.clear()
@@ -33,5 +33,3 @@ def calculate_average():
 
 if __name__ == '__main__':
     app.run(port=9000, debug=True)
-
-
