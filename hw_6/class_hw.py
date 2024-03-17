@@ -16,6 +16,9 @@ class Circle(Shape):
         super().__init__(x, y)
         self.radius = radius
 
+    def __contains__(self, point):
+        return (point.x - self.x)**2 + (point.y - self.y)**2 <= self.radius ** 2
+
     def square(self):
         return math.pi * self.radius ** 2
 
